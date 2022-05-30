@@ -1,0 +1,54 @@
+*
+{
+    padding: 0;
+    margin: 0;
+}
+.main-type {
+    background: rgba(66, 198, 216, 0.61);
+    text-align: center;
+}
+.main-type ul {    
+    display: inline-flex;
+    list-style: none;
+}
+.main-type ul li {
+    width: 480px;
+    margin: 15px;
+    margin-left: 30px;
+    padding: 15px;
+    font-size:20px;
+}
+
+
+
+
+.sub-type {
+    display: inline-flex;
+    text-align: center;
+}
+.sub-type span {
+    text-align: center;
+}
+.sub-type ul {
+    list-style: none;
+    margin-left: 275px;
+}
+.sub-type ul li {
+    width: 225px;
+    margin: 10px;
+    padding: 10px;
+}
+/* Set a style for all buttons */
+.button button{
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 26px;
+    border: none;
+    cursor: pointer;
+    width: 90%;
+	font-size:16px;
+}
+button:hover {
+    opacity: 0.8;
+}

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beam Analysis</title>
+
+</head>
+<body>
+    <div>
+        <h2 text-align=center>Calculate Shear force & bending moment of a Beam and create corresponding diagram </h2>
+    </div>
+    <form action="{{ url_for('add_loads') }}", method="POST">
+        <label for="getlength">Enter the length of the beam: </label>
+        <input type="number" id="getlength" name="beamlength" placeholder="Enter Length" ><br><br><br>
+        <label for="sup1">Enter first support position of the beam: </label>
+        <input type="number" id="sup1" name="first_support" placeholder="First Support Position" ><br><br>
+        <label for="sup2">Enter second support position of the beam: </label>
+        <input type="number" id="sup2" name="second_support" placeholder="Second Support Position" ><br><br>
+        <input type="submit" value="Submit">
+    </form> 
+</body>
+</html>

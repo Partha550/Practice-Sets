@@ -1,0 +1,177 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="..\\static\load_and_moments.css">
+    <link rel="stylesheet" href="..\\static\modal_popup.css">
+</head>
+<body>
+    <div class="main-type">
+        <ul>
+            <li><h3>Add Loads</h3></li>
+            <li><h3>Add Moments</h3></li>
+        </ul>
+    </div>
+    <div class="sub-type button">
+        <span>
+            <ul>
+                <li><button type="button" onclick="document.getElementById('concentrated-loads').style.display='block'">
+                    Concentrated Load</button></li>
+                <li><button type="button" onclick="document.getElementById('distributed-loads').style.display='block'">
+                    Uniformly Distributed Load</button></li>
+                <li><button type="button" onclick="document.getElementById('varying-loads').style.display='block'">
+                    Uniformly Varying Load</button></li>
+            </ul>
+        </span>
+        <span>
+            <ul>
+                <li><button type="button" onclick="document.getElementById('concentrated-moments').style.display='block'"> 
+                    Concentrated Moment</button></li>
+                <li><button type="button" onclick="document.getElementById('distributed-moments').style.display='block'"> 
+                    Uniformly Distributed Moment</button></li>
+                <li><button type="button" onclick="document.getElementById('varying-moments').style.display='block'"> 
+                    Uniformly Varying Moment</button></li>
+            </ul>
+        </span>
+    </div>
+
+    
+    <!-------------------------- All the modal blocks are here---------------- -->
+    <div id="concentrated-loads" class="modal">
+        <form class="modal-content animate" action="#", method="POST">   
+            <div class="imgcontainer">
+                <span onclick="document.getElementById('concentrated-loads').style.display='none'" 
+                class="close" title="Close">&times;</span>
+                <h2 style="text-align:center">Concentrated or <br> Point Load</h2>
+            </div>
+            <div class="container">
+                <label for="pl_pos">Position of the load: </label>
+                <input type="number" id="pl_pos" name="pl_pos" placeholder="Enter position from left of the beam" 
+                    title="Enter Position of the Concentrated Load here" required>
+                <label for="pl_mag">Magnitde of the load </label>
+                <input type="number" id="pl_mag" name="pl_mag" placeholder="'+ve' for upward, '-ve' for downward" 
+                    title="Enter Magnitude of the Concentrated Load here" required>
+                <input type="submit" value="Add this load" title="Add the above Load">
+            </div>
+        </form>
+    </div>
+    <div id="distributed-loads" class="modal">
+        <form class="modal-content animate" action="#">   
+            <div class="imgcontainer">
+                <span onclick="document.getElementById('distributed-loads').style.display='none'" 
+                class="close" title="Close">&times;</span>
+                <h2 style="text-align:center">Uniformly <br> Distribted Load</h2>
+            </div>
+            <div class="container">
+                <label for="spos">Start position of the load: </label>
+                <input type="number" id="spos" name="udl_spos" placeholder="Enter position from left of the beam" 
+                    title="Enter Start Position of the Distribted Load here" required>
+                <label for="epos">End position of the load: </label>
+                <input type="number" id="epos" name="udl_epos" placeholder="Start position + span of the load" 
+                    title="Enter End Position of the Distribted Load here" required>
+                <label for="mag">Magnitde of the load <span class="xnote">(force per unit length)</span></label>
+                <input type="number" id="mag" name="udl_mag" placeholder="'+ve' for upward, '-ve' for downward" 
+                    title="Enter Magnitude of the Distribted Load here" required>
+                <input type="submit" value="Add this load" title="Add the above Load">
+            </div>
+        </form>
+    </div>
+    <div id="varying-loads" class="modal">
+        <form class="modal-content animate" action="#">   
+            <div class="imgcontainer">
+                <span onclick="document.getElementById('varying-loads').style.display='none'" 
+                class="close" title="Close">&times;</span>
+                <h2 style="text-align:center">Uniformly <br> Varying Load</h2>
+            </div>
+            <div class="container">
+                <label for="spos">Start position of the load: </label>
+                <input type="number" id="spos" name="uvl_spos" placeholder="Enter position from left of the beam" 
+                    title="Enter Start Position of the Varying Load here" required>
+                <label for="epos">End position of the load: </label>
+                <input type="number" id="epos" name="uvl_epos" placeholder="Start position + span of the load" 
+                    title="Enter End Position of the Varying Load here" required>
+                <label for="smag">Start magnitde of the load <span class="xnote">(force per unit length)</span></label>
+                <input type="number" id="smag" name="uvl_smag" placeholder="'+ve' for upward, '-ve' for downward" 
+                    title="Enter start Magnitude of the Varying Load here" required>
+                <label for="mag">End magnitde of the load <span class="xnote">(force per unit length)</span></label>
+                <input type="number" id="mag" name="uvl_emag" placeholder="'+ve' for upward, '-ve' for downward" 
+                    title="Enter Magnitude of the Varying Load here" required>
+                <input type="submit" value="Add this load" title="Add the above Load">
+            </div>
+        </form>
+    </div>
+    <div id="concentrated-moments" class="modal">
+        <form class="modal-content animate" action="#">   
+            <div class="imgcontainer">
+                <span onclick="document.getElementById('concentrated-moments').style.display='none'" 
+                class="close" title="Close">&times;</span>
+                <h2 style="text-align:center">Concentrated or <br> Point Moment</h2>
+            </div>
+            <div class="container">
+                <label for="pos">Position of the moment: </label>
+                <input type="number" id="pos" name="pm_pos" placeholder="Enter position from left of the beam" 
+                    title="Enter Position of the Concentrated Moment here" required>
+                <label for="mag">Magnitde of the moment </label>
+                <input type="number" id="mag" name="pm_mag" placeholder="'+ve' for CCW, '-ve' for CW" 
+                    title="Enter Magnitude of the Concentrated moment here" required>
+                <input type="submit" value="Add this moment" title="Add the above Moment">
+            </div>
+        </form>
+    </div>
+    <div id="distributed-moments" class="modal">
+        <form class="modal-content animate" action="#">   
+            <div class="imgcontainer">
+                <span onclick="document.getElementById('distributed-moments').style.display='none'" 
+                class="close" title="Close">&times;</span>
+                <h2 style="text-align:center">Uniformly <br> Distribted Moment</h2>
+            </div>
+            <div class="container">
+                <label for="spos">Start position of the moment: </label>
+                <input type="number" id="spos" name="udm_spos" placeholder="Enter position from left of the beam" 
+                    title="Enter Start Position of the Distribted Moment here" required>
+                <label for="epos">End position of the moment: </label>
+                <input type="number" id="epos" name="udm_epos" placeholder="Start position + span of the moment" 
+                    title="Enter End Position of the Distribted Moment here" required>
+                <label for="mag">Magnitde of the moment <span class="xnote">(moment per unit length)</span></label>
+                <input type="number" id="mag" name="udm_mag" placeholder="'+ve' for CCW, '-ve' for CW" 
+                    title="Enter Magnitude of the Distribted Moment here" required>
+                <input type="submit" value="Add this moment" title="Add the above Moment">
+            </div>
+        </form>
+    </div>
+    <div id="varying-moments" class="modal">
+        <form class="modal-content animate" action="#">   
+            <div class="imgcontainer">
+                <span onclick="document.getElementById('varying-moments').style.display='none'" 
+                class="close" title="Close">&times;</span>
+                <h2 style="text-align:center">Uniformly <br> Varying Moment</h2>
+            </div>
+            <div class="container">
+                <label for="spos">Start position of the moment: </label>
+                <input type="number" id="spos" name="uvm_spos" placeholder="Enter position from left of the beam" 
+                    title="Enter Start Position of the Varying Moment here" required>
+                <label for="epos">End position of the moment: </label>
+                <input type="number" id="epos" name="uvm_epos" placeholder="Start position + span of the moments" 
+                    title="Enter End Position of the Varying Moment here" required>
+                <label for="smag">Start magnitde of the moment <span class="xnote">(moment per unit length)</span></label>
+                <input type="number" id="smag" name="udm_smag" placeholder="'+ve' for CCW, '-ve' for CW" 
+                    title="Enter start Magnitude of the Varying Moment here" required>
+                <label for="mag">End magnitde of the moment <span class="xnote">(moment per unit length)</span></label>
+                <input type="number" id="mag" name="udm_emag" placeholder="'+ve' for CCW, '-ve' for CW" 
+                    title="Enter Magnitude of the Varying Moment here" required>
+                <input type="submit" value="Add this moment" title="Add the above Moment">
+            </div>
+        </form>
+    </div>
+    <div>
+        <form action="#">
+            <button type="submit" title="Calculat Shear Force & Bending Moment for the 
+            Beam with above applied Loads & Moments">Calculate</button>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
